@@ -1,6 +1,13 @@
+-- Gruvbox --
+vim.g.gruvbox_material_background = 'medium'
+vim.g.gruvbox_material_enable_bold = 1
+vim.g.gruvbox_material_statusline_style = 'original'
+vim.g.gruvbox_material_palette = 'origninal'
+
+-- OneDark --
 require('onedark').setup  {
     -- Main options --
-    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -31,4 +38,14 @@ require('onedark').setup  {
     },
 }
 
-vim.cmd([[colorscheme onedark]])
+-- VsCode --
+vim.g.vscode_style = "dark"
+vim.g.vscode_transparent = 1
+vim.g.vscode_italic_comment = 1
+vim.g.vscode_disable_nvimtree_bg = false
+
+
+-- Colorscheme --
+--vim.cmd([[colorscheme gruvbox-material]])
+--vim.cmd([[colorscheme onedark]])
+vim.cmd([[colorscheme vscode]])

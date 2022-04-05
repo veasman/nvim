@@ -18,23 +18,19 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Bufferline --
-keymap("n", "L", ":BufferLineCycleNext<cr>", opts)
-keymap("n", "H", ":BufferLineCyclePrev<cr>", opts)
-
 -- NvimTree --
 keymap("n", "<leader>nt", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>nf", ":NvimTreeFindFile<cr>", opts)
 
 -- Intellisense --
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-keymap("n", "K",  "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-keymap("n", "<C-n>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-keymap("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+keymap("n", "K",  "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+keymap("n", "<C-n>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", opts)
+keymap("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
 
 -- Undotree --
 keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
@@ -52,7 +48,6 @@ keymap("n", "<leader>a", ":lua require('harpoon.ui').nav_file(1)<cr>", opts)
 keymap("n", "<leader>s", ":lua require('harpoon.ui').nav_file(2)<cr>", opts)
 keymap("n", "<leader>d", ":lua require('harpoon.ui').nav_file(3)<cr>", opts)
 keymap("n", "<leader>f", ":lua require('harpoon.ui').nav_file(4)<cr>", opts)
-keymap("n", "<leader>t", ":lua require('harpoon.term').gotoTerminal(1)<cr>", opts)
 
 -- Telescope --
 keymap("n", "<leader>fi", ":lua require('telescope.builtin').find_files()<cr>", opts)
@@ -65,6 +60,9 @@ keymap("n", "<leader>gs", ":lua require('telescope.builtin').git_status()<cr>", 
 keymap("n", "<leader>gb", ":lua require('telescope.builtin').git_branches()<cr>", opts)
 keymap("n", "<leader>gc", ":lua require('telescope.builtin').git_commits()<cr>", opts)
 keymap("n", "<leader>gt", ":lua require('telescope.builtin').git_stash()<cr>", opts)
+
+-- Toggleterm --
+keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
 
 -- Misc --
 
@@ -91,9 +89,10 @@ keymap("n", "<expr>j", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'j\'", opts)
 keymap("n", "<expr>k", "(v:count > 5 ? \"m\'\" . v:count : \"\") . \'k\'", opts)
 
 -- Moving text around
-keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
---inoremap <C-j> <esc>:m .+1<CR>==
---inoremap <C-k> <esc>:m .-2<CR>==
---nnoremap <leader>j :m .+1<CR>==
---nnoremap <leader>k :m .-2<CR>==
+keymap("v", "J", ":m '>+1<cr>gv=gv", opts)
+keymap("v", "K", ":m '<-2<cr>gv=gv", opts)
+keymap("v", "p", '"_dP', opts)
+--inoremap <C-j> <esc>:m .+1<cr>==
+--inoremap <C-k> <esc>:m .-2<cr>==
+--nnoremap <leader>j :m .+1<cr>==
+--nnoremap <leader>k :m .-2<cr>==

@@ -13,8 +13,7 @@ require('plug-config.lsp-installer')
 require('plug-config.lualine')
 require('plug-config.nvim-tree')
 require('plug-config.telescope')
+require('plug-config.toggleterm')
 
 -- colors --
---require('plug-config.gruvbox-material')
---require('plug-config.onedark')
-require('plug-config.vscode-nvim')
+require('plug-config.colorscheme')

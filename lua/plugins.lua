@@ -61,7 +61,16 @@ return packer.startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'APZelos/blamer.nvim'
     use 'lewis6991/gitsigns.nvim'
-    --Plug('akinsho/bufferline.nvim')
+    use 'akinsho/toggleterm.nvim'
+
+    -- Startup
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        config = function()
+        require"startup".setup()
+        end
+    }
 
     -- TPope
     use 'tpope/vim-fugitive'
