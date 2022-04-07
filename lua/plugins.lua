@@ -49,6 +49,8 @@ return packer.startup(function(use)
     use 'sainnhe/gruvbox-material'
     use 'Mofiqul/vscode.nvim'
     use 'navarasu/onedark.nvim'
+    use 'shaunsingh/nord.nvim'
+    use 'folke/tokyonight.nvim'
     use 'ap/vim-css-color'
 
     -- Helpers
@@ -103,7 +105,6 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use "saadparwaiz1/cmp_luasnip"
     use "hrsh7th/cmp-nvim-lsp"
-
 
     -- Snippets
     use "L3MON4D3/LuaSnip" --snippet engine

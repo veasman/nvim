@@ -44,8 +44,14 @@ vim.g.vscode_transparent = 1
 vim.g.vscode_italic_comment = 1
 vim.g.vscode_disable_nvimtree_bg = false
 
+-- Nord --
+vim.g.nord_contrast = true
+vim.g.nord_borders = true
+vim.g.nord_disable_background = false
+vim.g.nord_italic = false
+
+-- Tokyonight --
+vim.g.tokyonight_style = "storm"
 
 -- Colorscheme --
---vim.cmd([[colorscheme gruvbox-material]])
---vim.cmd([[colorscheme onedark]])
 vim.cmd([[colorscheme vscode]])

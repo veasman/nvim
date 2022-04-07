@@ -36,6 +36,7 @@ keymap("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
 keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 
 -- Fugitive --
+keymap("n", "<leader>gs", ":G<cr>", opts)
 keymap("n", "<leader>gd", ":Gvdiff<cr>", opts)
 keymap("n", "<leader>gh", ":diffget //2<cr>", opts)
 keymap("n", "<leader>gl", ":diffget //3<cr>", opts)
@@ -56,7 +57,6 @@ keymap("n", "<leader>fs", ":lua require('telescope.builtin').grep_string()<cr>",
 keymap("n", "<leader>hh", ":lua require('telescope.builtin').commands()<cr>", opts)
 keymap("n", "<leader>vh", ":lua require('telescope.builtin').help_tags()<cr>", opts)
 keymap("n", "<leader>vb", ":lua require('telescope.builtin').buffers()<cr>", opts)
-keymap("n", "<leader>gs", ":lua require('telescope.builtin').git_status()<cr>", opts)
 keymap("n", "<leader>gb", ":lua require('telescope.builtin').git_branches()<cr>", opts)
 keymap("n", "<leader>gc", ":lua require('telescope.builtin').git_commits()<cr>", opts)
 keymap("n", "<leader>gt", ":lua require('telescope.builtin').git_stash()<cr>", opts)
