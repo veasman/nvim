@@ -53,5 +53,8 @@ vim.g.nord_italic = false
 -- Tokyonight --
 vim.g.tokyonight_style = "storm"
 
+-- Everforest --
+vim.g.erforest_background = "hard"
+
 -- Colorscheme --
 vim.cmd([[colorscheme vscode]])

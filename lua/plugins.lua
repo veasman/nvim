@@ -40,7 +40,7 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+    -- My plugins here
     use 'wbthomason/packer.nvim' -- Have packer manage itself
     use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
     use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
@@ -52,6 +52,8 @@ return packer.startup(function(use)
     use 'shaunsingh/nord.nvim'
     use 'folke/tokyonight.nvim'
     use 'ap/vim-css-color'
+    use 'lunarvim/darkplus.nvim'
+    use 'sainnhe/everforest'
 
     -- Helpers
     use 'sheerun/vim-polyglot'
@@ -74,7 +76,6 @@ return packer.startup(function(use)
 
     -- TPope
     use 'tpope/vim-fugitive'
-    use 'tpope/vim-commentary'
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'
@@ -98,6 +99,7 @@ return packer.startup(function(use)
     -- Lsp
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     -- Cmp plugins
     use 'hrsh7th/nvim-cmp'

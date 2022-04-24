@@ -21,6 +21,6 @@ o.secure = true
 --o.cmdheight = 2
 o.updatetime = 50
 o.shortmess = "c"
-o.colorcolumn = "120"
+o.colorcolumn = "80"
 
 --vim.api.nvim_command[[highlight Normal guibg=none]]
