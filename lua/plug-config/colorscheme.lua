@@ -1,8 +1,9 @@
 -- Gruvbox --
-vim.g.gruvbox_material_background = 'medium'
-vim.g.gruvbox_material_enable_bold = 1
-vim.g.gruvbox_material_statusline_style = 'original'
-vim.g.gruvbox_material_palette = 'origninal'
+vim.g.gruvbox_baby_function_style = "NONE"
+vim.g.gruvbox_baby_keyword_style = "italic"
+vim.g.gruvbox_baby_telescope_theme = 1
+vim.g.gruvbox_baby_background_color = "dark"
+vim.g.gruvbox_baby_comment_style = "italic"
 
 -- OneDark --
 require('onedark').setup  {
@@ -57,4 +58,4 @@ vim.g.tokyonight_style = "storm"
 vim.g.erforest_background = "hard"
 
 -- Colorscheme --
-vim.cmd([[colorscheme vscode]])
+vim.cmd([[colorscheme gruvbox-baby]])
