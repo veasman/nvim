@@ -54,6 +54,7 @@ return packer.startup(function(use)
     use 'ap/vim-css-color'
     use 'lunarvim/darkplus.nvim'
     use 'sainnhe/everforest'
+    use 'p00f/nvim-ts-rainbow'
 
     -- Helpers
     use 'sheerun/vim-polyglot'
