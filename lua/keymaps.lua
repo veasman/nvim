@@ -64,6 +64,9 @@ keymap("n", "<leader>gt", ":lua require('telescope.builtin').git_stash()<cr>", o
 -- Toggleterm --
 keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
 
+-- Code actions --
+keymap("n", "<C-a>", ":CodeActionMenu<cr>", opts)
+
 -- Misc --
 
 -- Stay in indent mode

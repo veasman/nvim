@@ -49,11 +49,8 @@ return packer.startup(function(use)
     use 'luisiacc/gruvbox-baby'
     use 'Mofiqul/vscode.nvim'
     use 'navarasu/onedark.nvim'
-    use 'shaunsingh/nord.nvim'
-    use 'folke/tokyonight.nvim'
-    use 'ap/vim-css-color'
     use 'lunarvim/darkplus.nvim'
-    use 'sainnhe/everforest'
+    use 'ap/vim-css-color'
     use 'p00f/nvim-ts-rainbow'
 
     -- Helpers
@@ -65,6 +62,10 @@ return packer.startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/toggleterm.nvim'
+    use {
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu',
+    }
 
     -- Startup
     use {

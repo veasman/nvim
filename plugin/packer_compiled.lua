@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  everforest = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -139,11 +134,6 @@ _G.packer_plugins = {
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -158,6 +148,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-code-action-menu"] = {
+    commands = { "CodeActionMenu" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/cvm/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
+    url = "https://github.com/weilbith/nvim-code-action-menu"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -231,11 +229,6 @@ _G.packer_plugins = {
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
   undotree = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/undotree",
@@ -269,14 +262,20 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: startup.nvim
-time([[Config for startup.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
-time([[Config for startup.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
+-- Config for: startup.nvim
+time([[Config for startup.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
+time([[Config for startup.nvim]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file CodeActionMenu lua require("packer.load")({'nvim-code-action-menu'}, { cmd = "CodeActionMenu", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)
