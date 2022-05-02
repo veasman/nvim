@@ -1,7 +1,11 @@
-require'nvim-tree'.setup {
+local nvim_tree_status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not nvim_tree_status_ok then
+  return
+end
+
+nvim_tree.setup {
   auto_reload_on_write = true,
   disable_netrw = false,
-  hide_root_folder = false,
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
@@ -12,8 +16,9 @@ require'nvim-tree'.setup {
   sort_by = "name",
   update_cwd = false,
   view = {
-    width = 38,
+    width = 30,
     height = 30,
+    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     number = false,
@@ -24,6 +29,19 @@ require'nvim-tree'.setup {
       list = {
         -- user mappings go here
       },
+    },
+  },
+  renderer = {
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
     },
   },
   hijack_directories = {
@@ -37,7 +55,7 @@ require'nvim-tree'.setup {
   },
   ignore_ft_on_setup = {},
   system_open = {
-    cmd = nil,
+    cmd = "",
     args = {},
   },
   diagnostics = {
@@ -61,9 +79,11 @@ require'nvim-tree'.setup {
     timeout = 400,
   },
   actions = {
+    use_system_clipboard = true,
     change_dir = {
       enable = true,
       global = false,
+      restrict_above_cwd = false,
     },
     open_file = {
       quit_on_open = false,
@@ -89,6 +109,7 @@ require'nvim-tree'.setup {
       all = false,
       config = false,
       copy_paste = false,
+      diagnostics = false,
       git = false,
       profile = false,
     },
