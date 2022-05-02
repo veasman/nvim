@@ -7,6 +7,7 @@ end
 
 telescope.setup {
   defaults = {
+    file_ignore_patterns = { "node%_modules/.*" },
   },
   pickers = {
     find_files = {

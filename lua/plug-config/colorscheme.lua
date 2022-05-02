@@ -5,6 +5,11 @@ vim.g.gruvbox_baby_telescope_theme = 1
 vim.g.gruvbox_baby_background_color = "dark"
 vim.g.gruvbox_baby_comment_style = "italic"
 
+-- Gruvbox Material --
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_palette = 'mix'
+vim.g.gruvbox_material_better_performance = 1
+
 -- OneDark --
 require('onedark').setup  {
     -- Main options --
