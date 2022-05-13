@@ -92,7 +92,7 @@ return packer.startup(function(use)
       end
     }
     -- Line indent
-    use 'thaerkh/vim-indentguides'
+    use 'lukas-reineke/indent-blankline.nvim'
 
     -- Telescope
     use 'nvim-telescope/telescope.nvim'
