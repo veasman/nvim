@@ -46,11 +46,7 @@ return packer.startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- Colors
-    use 'luisiacc/gruvbox-baby'
-    use 'sainnhe/gruvbox-material'
-    use 'Mofiqul/vscode.nvim'
-    use 'navarasu/onedark.nvim'
-    use 'lunarvim/darkplus.nvim'
+    use 'christianchiarulli/nvcode-color-schemes.vim'
     use 'ap/vim-css-color'
 
     -- Helpers

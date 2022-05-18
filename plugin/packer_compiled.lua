@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["darkplus.nvim"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
-    url = "https://github.com/lunarvim/darkplus.nvim"
-  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/emmet-vim",
@@ -118,16 +113,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
-  },
-  ["gruvbox-baby"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
-    url = "https://github.com/luisiacc/gruvbox-baby"
-  },
-  ["gruvbox-material"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/gruvbox-material",
-    url = "https://github.com/sainnhe/gruvbox-material"
   },
   harpoon = {
     loaded = true,
@@ -148,6 +133,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvcode-color-schemes.vim"] = {
+    loaded = true,
+    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/nvcode-color-schemes.vim",
+    url = "https://github.com/christianchiarulli/nvcode-color-schemes.vim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -192,11 +182,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -253,11 +238,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vscode.nvim"] = {
-    loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/vscode.nvim",
-    url = "https://github.com/Mofiqul/vscode.nvim"
   },
   ["wiki.vim"] = {
     loaded = true,
