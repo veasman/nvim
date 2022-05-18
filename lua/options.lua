@@ -24,3 +24,6 @@ o.shortmess = "c"
 o.colorcolumn = "80"
 
 --vim.api.nvim_command[[highlight Normal guibg=none]]
+vim.g.nvcode_termcolors = 256
+
+vim.cmd [[colorscheme onedark]]
