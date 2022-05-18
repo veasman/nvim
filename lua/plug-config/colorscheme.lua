@@ -14,7 +14,7 @@ vim.g.gruvbox_material_better_performance = 1
 -- OneDark --
 require('onedark').setup  {
     -- Main options --
-    style = 'darker', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'warm', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -51,17 +51,5 @@ vim.g.vscode_transparent = 1
 vim.g.vscode_italic_comment = 1
 vim.g.vscode_disable_nvimtree_bg = false
 
--- Nord --
-vim.g.nord_contrast = true
-vim.g.nord_borders = true
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
-
--- Tokyonight --
-vim.g.tokyonight_style = "storm"
-
--- Everforest --
-vim.g.erforest_background = "hard"
-
 -- Colorscheme --
-vim.cmd([[colorscheme gruvbox-baby]])
+vim.cmd([[colorscheme onedark]])

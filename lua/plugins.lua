@@ -41,9 +41,9 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
     -- My plugins here
-    use 'wbthomason/packer.nvim' -- Have packer manage itself
-    use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
-    use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
+    use 'wbthomason/packer.nvim'
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
 
     -- Colors
     use 'luisiacc/gruvbox-baby'
@@ -62,6 +62,7 @@ return packer.startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/toggleterm.nvim'
+    use 'lervag/wiki.vim'
     use {
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu',
