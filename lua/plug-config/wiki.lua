@@ -1,1 +1,1 @@
-vim.g.wiki_root = '~/.local/share/nvim/wiki/'
+vim.g.wiki_root = '~/wiki'
