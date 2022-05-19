@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/friendly-snippets",

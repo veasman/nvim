@@ -67,6 +67,9 @@ keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
 -- Code actions --
 keymap("n", "<C-a>", ":CodeActionMenu<cr>", opts)
 
+-- Formatter --
+keymap("n", "<leader>F", ":Format<cr>", opts)
+
 -- Misc --
 
 -- Stay in indent mode

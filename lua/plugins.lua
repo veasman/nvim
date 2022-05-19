@@ -59,6 +59,7 @@ return packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'lervag/wiki.vim'
+    use 'mhartington/formatter.nvim'
     use {
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu',
@@ -88,6 +89,7 @@ return packer.startup(function(use)
         require('nvim-tree').setup()
       end
     }
+
     -- Line indent
     use 'lukas-reineke/indent-blankline.nvim'
 
