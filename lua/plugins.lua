@@ -55,11 +55,9 @@ return packer.startup(function(use)
     use 'mbbill/undotree'
     use 'windwp/nvim-autopairs'
     use 'mattn/emmet-vim'
-    use 'ThePrimeagen/harpoon'
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'lervag/wiki.vim'
-    use 'mhartington/formatter.nvim'
     use {
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu',
@@ -76,6 +74,16 @@ return packer.startup(function(use)
 
     -- TPope
     use 'tpope/vim-fugitive'
+
+    -- Primeagen
+    use 'ThePrimeagen/harpoon'
+    use {
+        'ThePrimeagen/refactoring.nvim',
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-treesitter/nvim-treesitter'}
+        }
+    }
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'

@@ -1,6 +1,6 @@
-local startup_status_ok, startup = pcall(require, "startup")
-if not startup_status_ok then
-  return
+local status_ok, startup = pcall(require, "startup")
+if not status_ok then
+    return
 end
 
 startup.setup {
