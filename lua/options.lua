@@ -23,7 +23,7 @@ o.updatetime = 50
 o.shortmess = "c"
 o.colorcolumn = "120"
 
---vim.api.nvim_command[[highlight Normal guibg=none]]
 vim.g.nvcode_termcolors = 256
 
 vim.cmd [[colorscheme onedark]]
+vim.cmd [[highlight Normal guibg=None]]

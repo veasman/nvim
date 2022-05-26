@@ -57,7 +57,7 @@ return packer.startup(function(use)
     use 'mattn/emmet-vim'
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/toggleterm.nvim'
-    use 'lervag/wiki.vim'
+    use 'vimwiki/vimwiki'
     use {
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu',

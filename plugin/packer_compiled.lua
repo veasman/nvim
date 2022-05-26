@@ -244,10 +244,10 @@ _G.packer_plugins = {
     path = "/home/cvm/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
   },
-  ["wiki.vim"] = {
+  vimwiki = {
     loaded = true,
-    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/wiki.vim",
-    url = "https://github.com/lervag/wiki.vim"
+    path = "/home/cvm/.local/share/nvim/site/pack/packer/start/vimwiki",
+    url = "https://github.com/vimwiki/vimwiki"
   }
 }
 
