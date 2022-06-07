@@ -1,10 +1,10 @@
 -- general --
+require('plugins')
 require('options')
 require('keymaps')
 require('misc')
 
 -- plugins --
-require('plugins')
 require('plug-config.lsp.init')
 require('plug-config.autopairs')
 require('plug-config.cmp')
