@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-nvim_tree.setup {
+require('nvim-tree').setup {
     auto_reload_on_write = true,
     disable_netrw = false,
     hijack_cursor = false,

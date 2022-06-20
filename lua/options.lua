@@ -22,8 +22,16 @@ o.secure = true
 o.updatetime = 50
 o.shortmess = "c"
 o.colorcolumn = "120"
+vim.opt.list = true
 
+-- NvCode --
 vim.g.nvcode_termcolors = 256
 
-vim.cmd [[colorscheme onedark]]
-vim.cmd [[highlight Normal guibg=None]]
+-- Emmet --
+vim.g.user_emmet_mode='n'
+vim.g.user_emmet_leader_key=','
+
+vim.cmd [[ colorscheme onedark ]]
+vim.cmd [[ highlight Normal guibg=None ]]
+vim.cmd [[ highlight DiffChange gui=None ]]
+vim.cmd [[ let g:vimwiki_list = [{ 'path': '~/.local/share/nvim/vimwiki/' }] ]]

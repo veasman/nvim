@@ -3,7 +3,7 @@ if not status_ok then
 	return
 end
 
-toggleterm.setup({
+toggleterm.setup {
 	size = 15,
 	open_mapping = [[<c-\>]],
 	hide_numbers = true,
@@ -16,4 +16,4 @@ toggleterm.setup({
 	direction = "horizontal",
 	close_on_exit = true,
 	shell = vim.o.shell,
-})
+}

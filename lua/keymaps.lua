@@ -20,17 +20,31 @@ vim.g.maplocalleader = " "
 
 -- Refactoring --
 -- Remaps for the refactoring operations currently offered by the plugin
-keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<cr>]], opts)
-keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<cr>]], opts)
-keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<cr>]], opts)
-keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<cr>]], opts)
+keymap("v", "<leader>re", "<esc><cmd>lua require('refactoring').refactor('Extract Function')<cr>", opts)
+keymap("v", "<leader>rf", "<esc><cmd>lua require('refactoring').refactor('Extract Function To File')<cr>", opts)
+keymap("v", "<leader>rv", "<esc><cmd>lua require('refactoring').refactor('Extract Variable')<cr>", opts)
+keymap("v", "<leader>ri", "<esc><cmd>lua require('refactoring').refactor('Inline Variable')<cr>", opts)
 
 -- Extract block doesn't need visual mode
-keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<cr>]], opts)
-keymap("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<cr>]], opts)
+keymap("n", "<leader>rb", "<cmd>lua require('refactoring').refactor('Extract Block')<cr>", opts)
+keymap("n", "<leader>rbf", "<cmd>lua require('refactoring').refactor('Extract Block To File')<cr>", opts)
 
 -- Inline variable can also pick up the identifier currently under the cursor without visual mode
-keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<cr>]], opts)
+keymap("n", "<leader>ri", "<cmd>lua require('refactoring').refactor('Inline Variable')<cr>", opts)
+
+-- Sidebar --
+keymap("n", "<leader>st", "<cmd>:SidebarNvimToggle<cr>", opts)
+
+-- Renamer --
+keymap("i", "<C-R>", "<cmd>lua require('renamer').rename()<cr>", opts)
+keymap("n", "<leader>rn", "<cmd>lua require('renamer').rename()<cr>", opts)
+keymap("v", "<leader>rn", "<cmd>lua require('renamer').rename()<cr>", opts)
+
+-- Search box --
+keymap("n", "<leader>sa", "<cmd>:SearchBoxMatchAll<cr>", opts)
+keymap("n", "<leader>sw", "<cmd>:SearchBoxIncSearch<cr>", opts)
+keymap("n", "<leader>sr", "<cmd>:SearchBoxReplace<cr>", opts)
+keymap("n", "<leader>sR", "<cmd>:SearchBoxReplace -- <C-r>=expand('<cword>')<cr><cr>", opts)
 
 -- NvimTree --
 keymap("n", "<leader>nt", ":NvimTreeToggle<cr>", opts)
@@ -43,40 +57,36 @@ keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
 keymap("n", "K",  "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
-keymap("n", "<C-n>", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", opts)
-keymap("n", "<C-p>", "<cmd>lua vim.lsp.diagnostic.goto_next()<cr>", opts)
+keymap("n", "<C-n>", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+keymap("n", "<C-p>", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
 
 -- Undotree --
 keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 
 -- Fugitive --
-keymap("n", "<leader>gs", ":G<cr>", opts)
-keymap("n", "<leader>gd", ":Gvdiff<cr>", opts)
-keymap("n", "<leader>gh", ":diffget //2<cr>", opts)
-keymap("n", "<leader>gl", ":diffget //3<cr>", opts)
+keymap("n", "<leader>gs", "<cmd>G<cr>", opts)
+keymap("n", "<leader>gc", "<cmd>Git commit<cr>", opts)
+keymap("n", "<leader>gd", "<cmd>Gvdiff<cr>", opts)
+keymap("n", "<leader>gh", "<cmd>diffget //2<cr>", opts)
+keymap("n", "<leader>gl", "<cmd>diffget //3<cr>", opts)
 
 -- Harpoon --
-keymap("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<cr>", opts)
-keymap("n", "<leader>hc", ":lua require('harpoon.mark').clear_all()<cr>", opts)
-keymap("n", "<leader>ht", ":lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
-keymap("n", "<leader>a", ":lua require('harpoon.ui').nav_file(1)<cr>", opts)
-keymap("n", "<leader>s", ":lua require('harpoon.ui').nav_file(2)<cr>", opts)
-keymap("n", "<leader>d", ":lua require('harpoon.ui').nav_file(3)<cr>", opts)
-keymap("n", "<leader>f", ":lua require('harpoon.ui').nav_file(4)<cr>", opts)
+keymap("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
+keymap("n", "<leader>hc", "<cmd>lua require('harpoon.mark').clear_all()<cr>", opts)
+keymap("n", "<leader>ht", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+keymap("n", "<leader>a", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", opts)
+keymap("n", "<leader>s", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", opts)
+keymap("n", "<leader>d", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", opts)
+keymap("n", "<leader>f", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", opts)
 
 -- Telescope --
-keymap("n", "<leader>fi", ":lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<leader>fo", ":lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>fs", ":lua require('telescope.builtin').grep_string()<cr>", opts)
-keymap("n", "<leader>hh", ":lua require('telescope.builtin').commands()<cr>", opts)
-keymap("n", "<leader>vh", ":lua require('telescope.builtin').help_tags()<cr>", opts)
-keymap("n", "<leader>vb", ":lua require('telescope.builtin').buffers()<cr>", opts)
-keymap("n", "<leader>gb", ":lua require('telescope.builtin').git_branches()<cr>", opts)
-keymap("n", "<leader>gc", ":lua require('telescope.builtin').git_commits()<cr>", opts)
-keymap("n", "<leader>gt", ":lua require('telescope.builtin').git_stash()<cr>", opts)
-
--- Toggleterm --
-keymap("n", "<leader>t", ":ToggleTerm<cr>", opts)
+keymap("n", "<leader>fi", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
+keymap("n", "<leader>fo", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').git_branches()<cr>", opts)
+keymap("n", "<leader>fc", "<cmd>lua require('telescope.builtin').git_commits()<cr>", opts)
+keymap("n", "<leader>hh", "<cmd>lua require('telescope.builtin').commands()<cr>", opts)
+keymap("n", "<leader>vh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+keymap("n", "<leader>vb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 
 -- Code actions --
 keymap("n", "<C-a>", ":CodeActionMenu<cr>", opts)
@@ -116,3 +126,17 @@ keymap("v", "p", '"_dP', opts)
 --inoremap <C-k> <esc>:m .-2<cr>==
 --nnoremap <leader>j :m .+1<cr>==
 --nnoremap <leader>k :m .-2<cr>==
+
+-- HlsLens
+keymap("n", "n", [[<cmd>execute("normal! " . v:count1 . "n")<cr><cmd>lua require("hlslens").start()<cr>]], opts)
+keymap("n", "N", [[<cmd>execute("normal! " . v:count1 . "N")<cr><cmd>lua require("hlslens").start()<cr>]], opts)
+keymap("n", "*", [[*<cmd>lua require("hlslens").start()<cr>]], opts)
+keymap("n", "#", [[#<cmd>lua require("hlslens").start()<cr>]], opts)
+keymap("n", "g*", [[g*<cmd>lua require("hlslens").start()<cr>]], opts)
+keymap("n", "g#", [[g#<cmd>lua require("hlslens").start()<cr>]], opts)
+keymap("n", "<Leader>l", ":noh<cr>", opts)
+
+-- Bufferline --
+keymap("n", "L", "<cmd>BufferLineCycleNext<cr>", opts)
+keymap("n", "H", "<cmd>BufferLineCyclePrev<cr>", opts)
+keymap("n", "<leader>bc", "<cmd>BufferLinePickClose<cr>", opts)

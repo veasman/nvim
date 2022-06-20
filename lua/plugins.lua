@@ -40,16 +40,9 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-    -- My plugins here
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-
-    -- Colors
-    use 'christianchiarulli/nvcode-color-schemes.vim'
-    use 'ap/vim-css-color'
-
-    -- Helpers
     use 'sheerun/vim-polyglot'
     use 'nvim-lualine/lualine.nvim'
     use 'mbbill/undotree'
@@ -58,45 +51,21 @@ return packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'vimwiki/vimwiki'
+    use 'sunjon/stylish.nvim'
+    use 'christianchiarulli/nvcode-color-schemes.vim'
+    use 'tpope/vim-fugitive'
+    --use 'petertriho/nvim-scrollbar'
     use {
-        'weilbith/nvim-code-action-menu',
-        cmd = 'CodeActionMenu',
-    }
-
-    -- Startup
-    use {
-        'startup-nvim/startup.nvim',
-        requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'},
+        'lewis6991/satellite.nvim',
         config = function()
-          require('startup').setup()
+            require('satellite').setup()
         end
     }
 
-    -- TPope
-    use 'tpope/vim-fugitive'
-
-    -- Primeagen
-    use 'ThePrimeagen/harpoon'
-    use {
-        'ThePrimeagen/refactoring.nvim',
-        requires = {
-            {'nvim-lua/plenary.nvim'},
-            {'nvim-treesitter/nvim-treesitter'}
-        }
-    }
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/playground'
-
-    -- NvimTree
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = { 'kyazdani42/nvim-web-devicons' },
-    }
-
-    -- Line indent
-    use 'lukas-reineke/indent-blankline.nvim'
 
     -- Telescope
     use 'nvim-telescope/telescope.nvim'
@@ -118,6 +87,121 @@ return packer.startup(function(use)
     -- Snippets
     use 'L3MON4D3/LuaSnip' --snippet engine
     use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
+
+    use 'rcarriga/nvim-notify'
+
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup()
+        end
+    }
+
+    use {
+        'michaelb/sniprun',
+        run = 'bash ./install.sh'
+    }
+
+    use {
+        'filipdutescu/renamer.nvim',
+        branch = 'master',
+        requires = { {'nvim-lua/plenary.nvim'} },
+        config = function()
+            require('renamer').setup()
+        end
+    }
+
+    use {
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('colorizer').setup()
+        end
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    use {
+        'VonHeikemen/searchbox.nvim',
+        requires = {
+            { 'MunifTanjim/nui.nvim' }
+        }
+    }
+
+    use {
+        'sidebar-nvim/sidebar.nvim',
+        config = function()
+            require('sidebar-nvim').setup()
+        end
+    }
+
+    use {
+        'yioneko/nvim-yati',
+        requires = 'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require('nvim-treesitter.configs').setup {
+                yati = { enable = true }
+            }
+        end
+    }
+
+    use {
+        'yamatsum/nvim-cursorline',
+        config = function()
+            require('nvim-cursorline').setup {
+                cursorline = {
+                    timeout = 0
+                },
+            }
+        end
+    }
+
+    use {
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu',
+    }
+
+    use {
+        'startup-nvim/startup.nvim',
+        requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'},
+        config = function()
+            require('startup').setup()
+        end
+    }
+
+    -- Primeagen
+    use 'ThePrimeagen/harpoon'
+    use {
+       'ThePrimeagen/refactoring.nvim',
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-treesitter/nvim-treesitter'}
+        },
+        config = function()
+            require('refactoring').setup()
+        end
+    }
+
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+    }
+
+    use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('indent_blankline').setup {
+                show_current_context = true,
+                show_current_context_start = true,
+            }
+        end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

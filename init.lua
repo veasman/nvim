@@ -1,21 +1,6 @@
 -- general --
 require('plugins')
 require('options')
+require('plug-config.init')
 require('keymaps')
 require('misc')
-
--- plugins --
-require('plug-config.lsp.init')
-require('plug-config.autopairs')
-require('plug-config.cmp')
-require('plug-config.emmet')
-require('plug-config.gitsigns')
-require('plug-config.indent-blankline')
-require('plug-config.lualine')
-require('plug-config.nvim-tree')
-require('plug-config.refactoring')
-require('plug-config.startup')
-require('plug-config.telescope')
-require('plug-config.toggleterm')
-require('plug-config.treesitter')
-require('plug-config.vimwiki')
