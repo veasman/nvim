@@ -54,13 +54,7 @@ return packer.startup(function(use)
     use 'sunjon/stylish.nvim'
     use 'christianchiarulli/nvcode-color-schemes.vim'
     use 'tpope/vim-fugitive'
-    --use 'petertriho/nvim-scrollbar'
-    use {
-        'lewis6991/satellite.nvim',
-        config = function()
-            require('satellite').setup()
-        end
-    }
+    use 'petertriho/nvim-scrollbar'
 
 
     -- Treesitter
