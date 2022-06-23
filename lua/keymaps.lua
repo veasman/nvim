@@ -32,19 +32,19 @@ keymap("n", "<leader>rbf", "<cmd>lua require('refactoring').refactor('Extract Bl
 -- Inline variable can also pick up the identifier currently under the cursor without visual mode
 keymap("n", "<leader>ri", "<cmd>lua require('refactoring').refactor('Inline Variable')<cr>", opts)
 
+-- Spectre --
+keymap("n", "<leader>S", "<cmd>lua require('spectre').open()<cr>", opts)
+keymap("n", "<leader>Sw", "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", opts)
+keymap("n", "<leader>Sf", "<cmd>lua require('spectre').open_file_search()<cr>", opts)
+
+
 -- Sidebar --
-keymap("n", "<leader>st", "<cmd>:SidebarNvimToggle<cr>", opts)
+keymap("n", "<leader>st", "<cmd>SidebarNvimToggle<cr>", opts)
 
 -- Renamer --
 keymap("i", "<C-R>", "<cmd>lua require('renamer').rename()<cr>", opts)
 keymap("n", "<leader>rn", "<cmd>lua require('renamer').rename()<cr>", opts)
 keymap("v", "<leader>rn", "<cmd>lua require('renamer').rename()<cr>", opts)
-
--- Search box --
-keymap("n", "<leader>sa", "<cmd>:SearchBoxMatchAll<cr>", opts)
-keymap("n", "<leader>sw", "<cmd>:SearchBoxIncSearch<cr>", opts)
-keymap("n", "<leader>sr", "<cmd>:SearchBoxReplace<cr>", opts)
-keymap("n", "<leader>sR", "<cmd>:SearchBoxReplace -- <C-r>=expand('<cword>')<cr><cr>", opts)
 
 -- NvimTree --
 keymap("n", "<leader>nt", ":NvimTreeToggle<cr>", opts)
@@ -64,8 +64,8 @@ keymap("n", "<C-p>", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
 keymap("n", "<leader>u", ":UndotreeToggle<cr>", opts)
 
 -- Fugitive --
-keymap("n", "<leader>gs", "<cmd>G<cr>", opts)
-keymap("n", "<leader>gc", "<cmd>Git commit<cr>", opts)
+keymap("n", "<leader>gs", "<cmd>lua require('neogit').open()<cr>", opts)
+keymap("n", "<leader>gc", "<cmd>lua require('neogit').open({\"commit\"})<cr>", opts)
 keymap("n", "<leader>gd", "<cmd>Gvdiff<cr>", opts)
 keymap("n", "<leader>gh", "<cmd>diffget //2<cr>", opts)
 keymap("n", "<leader>gl", "<cmd>diffget //3<cr>", opts)
@@ -87,6 +87,11 @@ keymap("n", "<leader>fc", "<cmd>lua require('telescope.builtin').git_commits()<c
 keymap("n", "<leader>hh", "<cmd>lua require('telescope.builtin').commands()<cr>", opts)
 keymap("n", "<leader>vh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
 keymap("n", "<leader>vb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
+
+-- Bufferline --
+keymap("n", "L", "<cmd>BufferLineCycleNext<cr>", opts)
+keymap("n", "H", "<cmd>BufferLineCyclePrev<cr>", opts)
+keymap("n", "<leader>bc", "<cmd>BufferLinePickClose<cr>", opts)
 
 -- Code actions --
 keymap("n", "<C-a>", ":CodeActionMenu<cr>", opts)
@@ -126,17 +131,3 @@ keymap("v", "p", '"_dP', opts)
 --inoremap <C-k> <esc>:m .-2<cr>==
 --nnoremap <leader>j :m .+1<cr>==
 --nnoremap <leader>k :m .-2<cr>==
-
--- HlsLens
-keymap("n", "n", [[<cmd>execute("normal! " . v:count1 . "n")<cr><cmd>lua require("hlslens").start()<cr>]], opts)
-keymap("n", "N", [[<cmd>execute("normal! " . v:count1 . "N")<cr><cmd>lua require("hlslens").start()<cr>]], opts)
-keymap("n", "*", [[*<cmd>lua require("hlslens").start()<cr>]], opts)
-keymap("n", "#", [[#<cmd>lua require("hlslens").start()<cr>]], opts)
-keymap("n", "g*", [[g*<cmd>lua require("hlslens").start()<cr>]], opts)
-keymap("n", "g#", [[g#<cmd>lua require("hlslens").start()<cr>]], opts)
-keymap("n", "<Leader>l", ":noh<cr>", opts)
-
--- Bufferline --
-keymap("n", "L", "<cmd>BufferLineCycleNext<cr>", opts)
-keymap("n", "H", "<cmd>BufferLineCyclePrev<cr>", opts)
-keymap("n", "<leader>bc", "<cmd>BufferLinePickClose<cr>", opts)

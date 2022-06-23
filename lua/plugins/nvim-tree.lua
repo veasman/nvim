@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-require('nvim-tree').setup {
+nvim_tree.setup {
     auto_reload_on_write = true,
     disable_netrw = false,
     hijack_cursor = false,
@@ -20,7 +20,7 @@ require('nvim-tree').setup {
         height = 30,
         hide_root_folder = false,
         side = "left",
-        preserve_window_proportions = false,
+        preserve_window_proportions = true,
         number = false,
         relativenumber = false,
         signcolumn = "yes",
@@ -60,12 +60,12 @@ require('nvim-tree').setup {
     },
     diagnostics = {
         enable = false,
-        show_on_dirs = false,
+        show_on_dirs = true,
         icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
+            hint = "●",
+            info = "●",
+            warning = "●",
+            error = "●",
         },
     },
     filters = {

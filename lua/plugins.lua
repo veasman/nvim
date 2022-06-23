@@ -38,7 +38,6 @@ packer.init {
     },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/popup.nvim'
@@ -54,8 +53,7 @@ return packer.startup(function(use)
     use 'sunjon/stylish.nvim'
     use 'christianchiarulli/nvcode-color-schemes.vim'
     use 'tpope/vim-fugitive'
-    use 'petertriho/nvim-scrollbar'
-
+    use 'glepnir/dashboard-nvim'
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'
@@ -79,23 +77,45 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp'
 
     -- Snippets
-    use 'L3MON4D3/LuaSnip' --snippet engine
-    use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
-
-    use 'rcarriga/nvim-notify'
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
 
     use {
-        'akinsho/bufferline.nvim',
-        tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons',
+        'TimUntersberger/neogit',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim'
+        },
+    }
+
+    use {
+        'petertriho/nvim-scrollbar',
         config = function()
-            require('bufferline').setup()
+            require('scrollbar').setup {
+                handle = {
+                    color = "#1e2127"
+                }
+            }
+        end
+    }
+    use {
+        'windwp/nvim-spectre',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require('spectre').setup()
         end
     }
 
     use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
+
+    use {
         'michaelb/sniprun',
-        run = 'bash ./install.sh'
+        run = 'bash ./install.sh',
+        requires = 'rcarriga/nvim-notify'
     }
 
     use {
@@ -119,13 +139,6 @@ return packer.startup(function(use)
         config = function()
             require('Comment').setup()
         end
-    }
-
-    use {
-        'VonHeikemen/searchbox.nvim',
-        requires = {
-            { 'MunifTanjim/nui.nvim' }
-        }
     }
 
     use {
@@ -159,14 +172,6 @@ return packer.startup(function(use)
     use {
         'weilbith/nvim-code-action-menu',
         cmd = 'CodeActionMenu',
-    }
-
-    use {
-        'startup-nvim/startup.nvim',
-        requires = {'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim'},
-        config = function()
-            require('startup').setup()
-        end
     }
 
     -- Primeagen

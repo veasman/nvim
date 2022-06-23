@@ -32,6 +32,5 @@ vim.g.user_emmet_mode='n'
 vim.g.user_emmet_leader_key=','
 
 vim.cmd [[ colorscheme onedark ]]
-vim.cmd [[ highlight Normal guibg=None ]]
 vim.cmd [[ highlight DiffChange gui=None ]]
 vim.cmd [[ let g:vimwiki_list = [{ 'path': '~/.local/share/nvim/vimwiki/' }] ]]
